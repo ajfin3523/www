@@ -30,54 +30,23 @@ layout: default
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 col-md-12">
-					<div class="single-blog-box">
-						<div class="single-blog-thumb">
-							<img src="static/picture/blog-img1.png" alt="blog img">
-							<div class="meta-blog">
-								<span>04 feb 2023</span>
-							</div>
-						</div>
-						<div class="blog-box-content">
-							<h4><a href="blog-details.html">This long awaited technology change the world</a></h4>
-							<p>A wonderful serenity has taken posssion of my entire soul, like these sweet mornings of spring which I enjoy with my...</p>
-
-							<div class="blog-button">
-							 <a href="blog-details.html">Learn More<i class="bi bi-arrow-right"></i></a>
-					     	</div>
-						</div>
-					</div>
-					<div class="single-blog-box">
-						<div class="single-blog-thumb">
-							<img src="static/picture/blog-img2.png" alt="blog img">
-							<div class="meta-blog">
-								<span>02 feb 2023</span>
-							</div>
-						</div>
-						<div class="blog-box-content">
-							<h4><a href="blog-details.html">5 Habits That Will Help You Get 1% Better Every Day</a></h4>
-							<p>A wonderful serenity has taken posssion of my entire soul, like these sweet mornings of spring which I enjoy with my...</p>
-
-							<div class="blog-button">
-							 <a href="blog-details.html">Learn More<i class="bi bi-arrow-right"></i></a>
-					     	</div>
-						</div>
-					</div>
-					<div class="single-blog-box">
-						<div class="single-blog-thumb">
-							<img src="static/picture/blog-img3.png" alt="blog img">
-							<div class="meta-blog">
-								<span>06 feb 2023</span>
-							</div>
-						</div>
-						<div class="blog-box-content">
-							<h4><a href="blog-details.html">4 Uses of Artificial Intelligence That Will Blow Your Mind</a></h4>
-							<p>A wonderful serenity has taken posssion of my entire soul, like these sweet mornings of spring which I enjoy with my...</p>
-
-							<div class="blog-button">
-							 <a href="blog-details.html">Learn More<i class="bi bi-arrow-right"></i></a>
-					     	</div>
-						</div>
-					</div>
+                    {% for p in site.blog reversed %}
+                        <div class="single-blog-box">
+                            <div class="single-blog-thumb">
+                                <img src="static/picture/blog-img1.png" alt="blog img">
+                                <div class="meta-blog">
+                                    <span>{{ p.date | date_to_string}}</span>
+                                </div>
+                            </div>
+                            <div class="blog-box-content">
+                                <h4><a href="blog-details.html">{{ p.top }}</a></h4>
+                                <p>{{ p.content }}</p>
+                                <div class="blog-button">
+                                <a href={{ p.url }}>Learn More<i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
 	         	</div>
 				<!--blog-list-sidebar-->
 				<div class="col-lg-4 col-md-12">
