@@ -13,7 +13,7 @@ layout: default
 					<div class="breadcrumb-content-title">
 						<h1>Blog list</h1>
 						<ul>
-							<li><a href="index.html">home<i class="fas fa-angle-double-right"></i></a></li>
+							<li><a href="/">home<i class="fas fa-angle-double-right"></i></a></li>
 							<li>Blog list</li>
 						</ul>
 					</div>
@@ -33,7 +33,7 @@ layout: default
                     {% for p in site.blog reversed %}
                         <div class="single-blog-box">
                             <div class="single-blog-thumb">
-                                <img src="static/picture/blog-img1.png" alt="blog img">
+                                <img src="/static/picture/blog-img1.png" alt="blog img">
                                 <div class="meta-blog">
                                     <span>{{ p.date | date_to_string}}</span>
                                 </div>
@@ -60,7 +60,7 @@ layout: default
                                     {% for p in site.blog reversed %}
                                     <div class="resent-news-box">
                                         <div class="resent-news-thumb">
-                                            <img src="static/picture/resent-news.png" alt="resent imgs">
+                                            <img src="/static/picture/resent-news.png" alt="resent imgs">
                                         </div>
                                         <div class="resent-news-content">
                                             <h4><a href={{ p.url }}>{{ p.top }}</a></h4>
