@@ -39,7 +39,7 @@ layout: default
                                 </div>
                             </div>
                             <div class="blog-box-content">
-                                <h4><a href="blog-details.html">{{ p.top }}</a></h4>
+                                <h4><a href={{ p.url }}>{{ p.top }}</a></h4>
                                 <p>{{ p.content }}</p>
                                 <div class="blog-button">
                                 <a href={{ p.url }}>Learn More<i class="bi bi-arrow-right"></i></a>
@@ -51,66 +51,27 @@ layout: default
 				<!--blog-list-sidebar-->
 				<div class="col-lg-4 col-md-12">
 					<div class="blog-details-sidebar">
-						<div class="sidebar-search-box">
-							<div class="sidebar-title">
-								<h4>Search</h4>
-							</div>
-							<form action="#">
-								<input type="text" name="search" placeholder="search..." required="">
-								<button type="submit"><i class="fas fa-search"></i></button>
-							</form>
-						</div>
-						<div class="blog-details-sidebar-tags">
-							<div class="sidebar-title">
-							   <h4>Category</h4>
-						    </div>
-							<ul>
-								<li>Businnes<span>(15)</span></li>
-								<li>Web solition<span>(10)</span></li>
-								<li>Design agency<span>(5)</span></li>
-								<li>Development<span>(25)</span></li>
-								<li>WordPress <span>(10)</span></li>
-								<li>Technology<span>(9)</span></li>
-							</ul>
-						</div>
-						<div class="sidebar-recent-news">
-							<div class="recent-title">
-								<h4>Recent News</h4>
-							</div>
-							<div class="resent-news-box">
-								<div class="resent-news-thumb">
-									<img src="static/picture/resent-news.png" alt="resent imgs">
-								</div>
-								<div class="resent-news-content">
-									<h4><a href="#">Build Group Chat App With Vanilla JS Twilio Node</a></h4>
-									<p><i class="bi bi-calendar2-plus"></i>26 Feb 2023</p>
-								</div>
-							</div>	
-							<div class="resent-news-box">
-								<div class="resent-news-thumb">
-									<img src="static/picture/resent-news.png" alt="resent imgs">
-								</div>
-								<div class="resent-news-content">
-									<h4><a href="#">You want build creative design post your are</a></h4>
-									<p><i class="bi bi-calendar2-plus"></i>29 Mar 2023</p>
-								</div>
-							</div>
-						</div>
-						<div class="sidebar-tags">
-							<div class="tags-title">
-								<h4>Popular Tags</h4>
-							</div>
-							<ul>
-								<li><a href="#">Design</a></li>
-								<li><a href="#">Softwar</a></li>
-								<li><a href="#">Bootstrap</a></li>
-								<li><a href="#">Corporate</a></li>
-								<li><a href="#">HTML</a></li>
-								<li><a href="#">WordPress</a></li>
-								<li><a href="#">Portfolio</a></li>
-							</ul>
-						</div>
-					</div>
+                        <div class="col-lg-4 col-md-12">
+                            <div class="blog-details-sidebar">
+                                <div class="sidebar-recent-news">
+                                    <div class="recent-title">
+                                        <h4>Recent News</h4>
+                                    </div>
+                                    {% for p in site.blog reversed %}
+                                    <div class="resent-news-box">
+                                        <div class="resent-news-thumb">
+                                            <img src="static/picture/resent-news.png" alt="resent imgs">
+                                        </div>
+                                        <div class="resent-news-content">
+                                            <h4><a href="#">{{ p.top }}</a></h4>
+                                            <p><i class="bi bi-calendar2-plus"></i>{{ p.date | date_to_string}}</p>
+                                        </div>
+                                    </div>	
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 				</div>
 			</div>
 		</div>
