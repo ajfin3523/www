@@ -8,3 +8,6 @@ defaults:
       type: "blog"
     values:
       layout: "blog"
+
+
+
