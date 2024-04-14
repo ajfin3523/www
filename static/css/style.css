@@ -164,7 +164,7 @@
     margin-top: 17px;
     margin-bottom: 27px;
 }
-.dreamHub-button a {
+.AJ-button a {
     display: inline-block;
     color: #fff;
     padding: 12px 36px;
@@ -180,33 +180,33 @@
     -webkit-transition: background 300ms ease-in-out;
     transition: background 300ms ease-in-out;
 }
-.dreamHub-button a:hover{
+.AJ-button a:hover{
   background-position: 100%;
    color: #806cfe;
 }
-.dreamHub-button i {
+.AJ-button i {
     display: inline-block;
     margin-left: 6px;
     color: #fff;
     transition: 0.5s;
 }
-.dreamHub-button a:hover i{
+.AJ-button a:hover i{
      color: #806cfe;
 }
-.dreamHub-button a.bg-tranprent {
+.AJ-button a.bg-tranprent {
     background: transparent;
     border: 1px solid #010e22;
     color: #010e22;
 }
-.dreamHub-button a.bg-tranprent:hover{
+.AJ-button a.bg-tranprent:hover{
     background:#806cfe;
     color: #fff;
    border: 1px solid #806cfe;
 }
-.dreamHub-button a.bg-tranprent i{
+.AJ-button a.bg-tranprent i{
      color: #010e22;
 }
-.dreamHub-button a.bg-tranprent:hover i{
+.AJ-button a.bg-tranprent:hover i{
      color:#fff;
 }
 .hero-thumb img {
@@ -2062,7 +2062,7 @@ input[type=password]::-webkit-input-placeholder {
     transform: scale(2); } }
 
 /*===========================
-<-- DreamHub Loader Css -->
+<-- AJ Loader Css -->
 =============================*/
 .loader-wrapper {
     position: fixed;
