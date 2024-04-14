@@ -1,0 +1,13 @@
+collections:
+  blog:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "blog"
+    values:
+      layout: "blog"
+
+
+

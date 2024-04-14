@@ -13,7 +13,7 @@ layout: default
 					<div class="breadcrumb-content-title">
 						<h1>Blog list</h1>
 						<ul>
-							<li><a href="index.html">home<i class="fas fa-angle-double-right"></i></a></li>
+							<li><a href="/">home<i class="fas fa-angle-double-right"></i></a></li>
 							<li>Blog list</li>
 						</ul>
 					</div>
@@ -30,118 +30,48 @@ layout: default
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 col-md-12">
-					<div class="single-blog-box">
-						<div class="single-blog-thumb">
-							<img src="static/picture/blog-img1.png" alt="blog img">
-							<div class="meta-blog">
-								<span>04 feb 2023</span>
-							</div>
-						</div>
-						<div class="blog-box-content">
-							<h4><a href="blog-details.html">This long awaited technology change the world</a></h4>
-							<p>A wonderful serenity has taken posssion of my entire soul, like these sweet mornings of spring which I enjoy with my...</p>
-
-							<div class="blog-button">
-							 <a href="blog-details.html">Learn More<i class="bi bi-arrow-right"></i></a>
-					     	</div>
-						</div>
-					</div>
-					<div class="single-blog-box">
-						<div class="single-blog-thumb">
-							<img src="static/picture/blog-img2.png" alt="blog img">
-							<div class="meta-blog">
-								<span>02 feb 2023</span>
-							</div>
-						</div>
-						<div class="blog-box-content">
-							<h4><a href="blog-details.html">5 Habits That Will Help You Get 1% Better Every Day</a></h4>
-							<p>A wonderful serenity has taken posssion of my entire soul, like these sweet mornings of spring which I enjoy with my...</p>
-
-							<div class="blog-button">
-							 <a href="blog-details.html">Learn More<i class="bi bi-arrow-right"></i></a>
-					     	</div>
-						</div>
-					</div>
-					<div class="single-blog-box">
-						<div class="single-blog-thumb">
-							<img src="static/picture/blog-img3.png" alt="blog img">
-							<div class="meta-blog">
-								<span>06 feb 2023</span>
-							</div>
-						</div>
-						<div class="blog-box-content">
-							<h4><a href="blog-details.html">4 Uses of Artificial Intelligence That Will Blow Your Mind</a></h4>
-							<p>A wonderful serenity has taken posssion of my entire soul, like these sweet mornings of spring which I enjoy with my...</p>
-
-							<div class="blog-button">
-							 <a href="blog-details.html">Learn More<i class="bi bi-arrow-right"></i></a>
-					     	</div>
-						</div>
-					</div>
+                    {% for p in site.blog reversed %}
+                        <div class="single-blog-box">
+                            <div class="single-blog-thumb">
+                                <img src="/static/picture/blog-img1.png" alt="blog img">
+                                <div class="meta-blog">
+                                    <span>{{ p.date | date_to_string}}</span>
+                                </div>
+                            </div>
+                            <div class="blog-box-content">
+                                <h4><a href={{ p.url }}>{{ p.top }}</a></h4>
+                                <p>{{ p.content }}</p>
+                                <div class="blog-button">
+                                <a href={{ p.url }}>Learn More<i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
 	         	</div>
 				<!--blog-list-sidebar-->
 				<div class="col-lg-4 col-md-12">
 					<div class="blog-details-sidebar">
-						<div class="sidebar-search-box">
-							<div class="sidebar-title">
-								<h4>Search</h4>
-							</div>
-							<form action="#">
-								<input type="text" name="search" placeholder="search..." required="">
-								<button type="submit"><i class="fas fa-search"></i></button>
-							</form>
-						</div>
-						<div class="blog-details-sidebar-tags">
-							<div class="sidebar-title">
-							   <h4>Category</h4>
-						    </div>
-							<ul>
-								<li>Businnes<span>(15)</span></li>
-								<li>Web solition<span>(10)</span></li>
-								<li>Design agency<span>(5)</span></li>
-								<li>Development<span>(25)</span></li>
-								<li>WordPress <span>(10)</span></li>
-								<li>Technology<span>(9)</span></li>
-							</ul>
-						</div>
-						<div class="sidebar-recent-news">
-							<div class="recent-title">
-								<h4>Recent News</h4>
-							</div>
-							<div class="resent-news-box">
-								<div class="resent-news-thumb">
-									<img src="static/picture/resent-news.png" alt="resent imgs">
-								</div>
-								<div class="resent-news-content">
-									<h4><a href="#">Build Group Chat App With Vanilla JS Twilio Node</a></h4>
-									<p><i class="bi bi-calendar2-plus"></i>26 Feb 2023</p>
-								</div>
-							</div>	
-							<div class="resent-news-box">
-								<div class="resent-news-thumb">
-									<img src="static/picture/resent-news.png" alt="resent imgs">
-								</div>
-								<div class="resent-news-content">
-									<h4><a href="#">You want build creative design post your are</a></h4>
-									<p><i class="bi bi-calendar2-plus"></i>29 Mar 2023</p>
-								</div>
-							</div>
-						</div>
-						<div class="sidebar-tags">
-							<div class="tags-title">
-								<h4>Popular Tags</h4>
-							</div>
-							<ul>
-								<li><a href="#">Design</a></li>
-								<li><a href="#">Softwar</a></li>
-								<li><a href="#">Bootstrap</a></li>
-								<li><a href="#">Corporate</a></li>
-								<li><a href="#">HTML</a></li>
-								<li><a href="#">WordPress</a></li>
-								<li><a href="#">Portfolio</a></li>
-							</ul>
-						</div>
-					</div>
+                        <div class="col-lg-4 col-md-12">
+                            <div class="blog-details-sidebar">
+                                <div class="sidebar-recent-news">
+                                    <div class="recent-title">
+                                        <h4>Recent News</h4>
+                                    </div>
+                                    {% for p in site.blog reversed %}
+                                    <div class="resent-news-box">
+                                        <div class="resent-news-thumb">
+                                            <img src="/static/picture/resent-news.png" alt="resent imgs">
+                                        </div>
+                                        <div class="resent-news-content">
+                                            <h4><a href={{ p.url }}>{{ p.top }}</a></h4>
+                                            <p><i class="bi bi-calendar2-plus"></i>{{ p.date | date_to_string}}</p>
+                                        </div>
+                                    </div>	
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 				</div>
 			</div>
 		</div>
