@@ -20,7 +20,9 @@ layout: default
                             </div>
                             <div class="blog-box-content">
                                 <h4><a href={{ p.url }}>{{ p.top }}</a></h4>
-                                <p>{{ p.content }}</p>
+								<div class="container-fluid px-3 my-5 markdown-body">
+									<p>{{ p.excerpt | markdownify }}</p>
+								</div>
                                 <div class="blog-button">
                                 <a href={{ p.url }}>Learn More<i class="bi bi-arrow-right"></i></a>
                                 </div>
