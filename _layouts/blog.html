@@ -2,25 +2,6 @@
 layout: default
 ---
 
-
-	<!--==========================-->
-	    <!--start-breadcrumb-area-->
-	<!--==========================-->
-	<div class="breadcrumb-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="breadcrumb-content-title">
-						<h1>blog details</h1>
-						<ul>
-							<li><a href="/">home<i class="fas fa-angle-double-right"></i></a></li>
-							<li>Blog details</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div><!--end-breadcrumb-section-->
     <!--==============================-->
 	   <!-- Start-blog-Details-area-->
 	<!--==============================-->
@@ -30,7 +11,7 @@ layout: default
 					<div class="col-lg-8 col-md-12">
 						<div class="blog-post-item">
 							<div class="bllog-thumb">
-								<img src="/static/picture/blog-details-img.jpg" alt="blog details img">
+								<img src="/static/picture/team-anita.jpg" alt="blog details img">
 							</div>
 							<div class="post-metainfo">
 								<ul>
@@ -56,9 +37,6 @@ layout: default
 								</div>
 								{% for p in site.blog reversed %}
 								<div class="resent-news-box">
-									<div class="resent-news-thumb">
-										<img src="/static/picture/resent-news.png" alt="resent imgs">
-									</div>
 									<div class="resent-news-content">
 										<h4><a href="#">{{ p.top }}</a></h4>
 										<p><i class="bi bi-calendar2-plus"></i>{{ p.date | date_to_string}}</p>
