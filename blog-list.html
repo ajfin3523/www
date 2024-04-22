@@ -39,9 +39,6 @@ layout: default
                                     </div>
                                     {% for p in site.blog reversed %}
                                     <div class="resent-news-box">
-                                        <div class="resent-news-thumb">
-                                            <img src="{{ p.pic }}" alt="resent imgs">
-                                        </div>
                                         <div class="resent-news-content">
                                             <h4><a href={{ p.url }}>{{ p.top }}</a></h4>
                                             <p><i class="bi bi-calendar2-plus"></i>{{ p.date | date_to_string}}</p>
