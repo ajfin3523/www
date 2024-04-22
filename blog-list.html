@@ -31,27 +31,23 @@ layout: default
                     {% endfor %}
 	         	</div>
 				<!--blog-list-sidebar-->
-				<div class="col-lg-4 col-md-12">
-					<div class="blog-details-sidebar">
-                        <div class="col-lg-4 col-md-12">
-                            <div class="blog-details-sidebar">
-                                <div class="sidebar-recent-news">
-                                    <div class="recent-title">
-                                        <h4>Recent News</h4>
-                                    </div>
-                                    {% for p in site.blog reversed %}
-                                    <div class="resent-news-box">
-                                        <div class="resent-news-content">
-                                            <h4><a href={{ p.url }}>{{ p.top }}</a></h4>
-                                            <p><i class="bi bi-calendar2-plus"></i>{{ p.date | date_to_string}}</p>
-                                        </div>
-                                    </div>	
-                                    {% endfor %}
+                <div class="col-lg-4 col-md-12">
+                    <div class="blog-details-sidebar">
+                        <div class="sidebar-recent-news">
+                            <div class="recent-title">
+                                <h4>Recent News</h4>
                                 </div>
-                            </div>
+                                {% for p in site.blog reversed %}
+                                <div class="resent-news-box">
+                                    <div class="resent-news-content">
+                                        <h4><a href={{ p.url }}>{{ p.top }}</a></h4>
+                                        <p><i class="bi bi-calendar2-plus"></i>{{ p.date | date_to_string}}</p>
+                                    </div>
+                                </div>	
+                                {% endfor %}
                         </div>
                     </div>
-				</div>
+                </div>
 			</div>
 		</div>
 	</div><!--end-blog-area-->
