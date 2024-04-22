@@ -23,7 +23,9 @@ layout: default
 								<h1>{{ page.top }}</h1>
 							</div>
 							<div class="blog-details-descption">
-								<p>{{ page.content | markdownify }}</p>
+								<div class="container-fluid px-3 my-5 markdown-body">
+									<p>{{ page.content | markdownify }}</p>
+								</div>
 							</div>
 
 						</div>
