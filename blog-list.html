@@ -3,26 +3,6 @@ layout: default
 ---
 
 
-	<!--==========================-->
-	    <!--start-breadcrumb-area-->
-	<!--==========================-->
-	<div class="breadcrumb-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="breadcrumb-content-title">
-						<h1>Blog list</h1>
-						<ul>
-							<li><a href="/">home<i class="fas fa-angle-double-right"></i></a></li>
-							<li>Blog list</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div><!--end-breadcrumb-section-->
-
-
    <!--==========================-->
 	  <!--start-blog-area-->
 	<!--==========================-->
@@ -33,14 +13,16 @@ layout: default
                     {% for p in site.blog reversed %}
                         <div class="single-blog-box">
                             <div class="single-blog-thumb">
-                                <img src="/static/picture/blog-img1.png" alt="blog img">
+                                <img src="{{ p.pic }}" alt="blog img">
                                 <div class="meta-blog">
                                     <span>{{ p.date | date_to_string}}</span>
                                 </div>
                             </div>
                             <div class="blog-box-content">
                                 <h4><a href={{ p.url }}>{{ p.top }}</a></h4>
-                                <p>{{ p.content }}</p>
+								<div class="container-fluid px-3 my-5 markdown-body">
+									<p>{{ p.excerpt | markdownify }}</p>
+								</div>
                                 <div class="blog-button">
                                 <a href={{ p.url }}>Learn More<i class="bi bi-arrow-right"></i></a>
                                 </div>
@@ -49,30 +31,23 @@ layout: default
                     {% endfor %}
 	         	</div>
 				<!--blog-list-sidebar-->
-				<div class="col-lg-4 col-md-12">
-					<div class="blog-details-sidebar">
-                        <div class="col-lg-4 col-md-12">
-                            <div class="blog-details-sidebar">
-                                <div class="sidebar-recent-news">
-                                    <div class="recent-title">
-                                        <h4>Recent News</h4>
-                                    </div>
-                                    {% for p in site.blog reversed %}
-                                    <div class="resent-news-box">
-                                        <div class="resent-news-thumb">
-                                            <img src="/static/picture/resent-news.png" alt="resent imgs">
-                                        </div>
-                                        <div class="resent-news-content">
-                                            <h4><a href={{ p.url }}>{{ p.top }}</a></h4>
-                                            <p><i class="bi bi-calendar2-plus"></i>{{ p.date | date_to_string}}</p>
-                                        </div>
-                                    </div>	
-                                    {% endfor %}
+                <div class="col-lg-4 col-md-12">
+                    <div class="blog-details-sidebar">
+                        <div class="sidebar-recent-news">
+                            <div class="recent-title">
+                                <h4>Recent News</h4>
                                 </div>
-                            </div>
+                                {% for p in site.blog reversed %}
+                                <div class="resent-news-box">
+                                    <div class="resent-news-content">
+                                        <h4><a href={{ p.url }}>{{ p.top }}</a></h4>
+                                        <p><i class="bi bi-calendar2-plus"></i>{{ p.date | date_to_string}}</p>
+                                    </div>
+                                </div>	
+                                {% endfor %}
                         </div>
                     </div>
-				</div>
+                </div>
 			</div>
 		</div>
 	</div><!--end-blog-area-->
