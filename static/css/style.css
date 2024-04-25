@@ -909,6 +909,15 @@
     width: 95%;
     padding-right: 22px;
 }
+.contact-form-2 textarea {
+    display: inline-block;
+    width: 100%;
+    border: 0px solid #c8c1c1;
+    padding-left: 0px;
+    outline: 0;
+    border-radius: 0px;
+    padding-right: 0px;
+}
 .contact-textarea textarea {
     display: inline-block;
     width: 98%;
