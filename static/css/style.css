@@ -889,6 +889,9 @@
  <--Start-contact-form-area-css-->
  ================================*/
 .contuct-area {
+    padding: 103px 0 0 0;
+}
+.contuct-area-old {
     padding: 103px 367px 118px;
 }
 .contuct-message h4 {
@@ -908,6 +911,9 @@
     border-radius: 5px;
     width: 95%;
     padding-right: 22px;
+}
+.contact-form-2 textarea {
+    width: 100%;
 }
 .contact-textarea textarea {
     display: inline-block;
